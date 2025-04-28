@@ -212,7 +212,7 @@ video {
 }
 
 .service {
-	width: 80%;
+	width: 90%;
 	margin: 50px auto;
 	display: flex;
 	justify-content: space-between;
@@ -503,7 +503,7 @@ footer .logo img {
 
 .footer-bottom {
 	margin: 0px 20px;
-	padding-top: 15px;
+	padding-top: 0.7rem;
 }
 
 .footer-bottom .footer-text {
