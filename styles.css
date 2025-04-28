@@ -576,6 +576,10 @@ footer .icons i {
 		padding-right: 10px;
 	}
 
+	.service-img img {
+		height: auto;
+	}
+
 	.service-description {
 		font-size: 4vw;
 		padding: 0.5rem 0;
