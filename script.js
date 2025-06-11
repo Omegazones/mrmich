@@ -1,27 +1,28 @@
 // PHOTO GALLERY
 
-const gallery = document.querySelector(".photo-gallery");
-const images = gallery.querySelectorAll(".photo-gallery img");
+const gallery = document.getElementById("photo-gallery");
 const showMoreBtn = document.getElementById("showMoreBtn");
 const showLessBtn = document.getElementById("showLessBtn");
-const initialVisibleCount = 4; // Number of images to show initially
+/* const initialVisibleCount = 10;  */ // Number of images to show initially
 
 // Hide images beyond the initial count
-for (let i = initialVisibleCount; i < images.length; i++) {
+/* or (let i = initialVisibleCount; i < images.length; i++) {
   images[i].classList.add("hidden");
 }
 
 // Show "Show More" button if there are hidden images
 if (images.length > initialVisibleCount) {
   showMoreBtn.classList.remove("hidden");
-}
+} */
 
 showMoreBtn.addEventListener("click", function () {
   // Show all hidden images
-  const hiddenImages = gallery.querySelectorAll(".hidden");
+  /* const hiddenImages = gallery.querySelectorAll(".hidden");
   hiddenImages.forEach((img) => {
     img.classList.remove("hidden");
-  });
+  }); */
+
+  gallery.classList.remove("height");
 
   // Hide "Show More" and show "Show Less" button
   showMoreBtn.classList.add("hidden");
@@ -30,9 +31,11 @@ showMoreBtn.addEventListener("click", function () {
 
 showLessBtn.addEventListener("click", function () {
   // Hide images beyond the initial count again
-  for (let i = initialVisibleCount; i < images.length; i++) {
+  /* for (let i = initialVisibleCount; i < images.length; i++) {
     images[i].classList.add("hidden");
   }
+ */
+  gallery.classList.add("height");
 
   // Hide "Show Less" and show "Show More" button
   showLessBtn.classList.add("hidden");
@@ -67,7 +70,7 @@ function showSlides() {
   slide[slideIndex - 1].style.display = "block";
   dot[slideIndex - 1].className += " active";
 
-  setTimeout(showSlides, 4000);
+  setTimeout(showSlides, 2000);
 }
 
 showSlides();
@@ -77,19 +80,11 @@ showSlides();
 const links = document.getElementById("links");
 const menu = document.getElementById("menu");
 
-/*
-  menu.addEventListener("click", function () {
+menu.addEventListener("click", function () {
   links.classList.replace("links", "sm-links");
   menu.classList.toggle("sm-menu");
-}); */
-
-menu.addEventListener("click", function () {
-  links.classList.toggle("sm-links");
-  menu.classList.toggle("sm-menu");
- 
 });
 
-/*
 function resetM() {
   if (
     links.classList.contains("sm-links") &&
@@ -100,7 +95,4 @@ function resetM() {
   }
 }
 
-if(a){
 document.body.addEventListener("mousedown", resetM);
-}  
-*/
